@@ -1,8 +1,11 @@
-# rogerrius Hyprland Dotfiles
+# rogerrius's Hyprland dotfiles
 
-This repository contains my custom configuration files for Hyprland, along with other useful programs.
+This repository contains my custom configuration files for Hyprland, along with other useful programs. 
+Some comments on the code are in catalan, but if you are here I'll suppose that you know what you are doing.
 
-# Overview
+<br>
+
+## Overview
 
 These configuration files are designed to create a lightweight and customizable Wayland environment. Some of the programs used:
 
@@ -11,32 +14,34 @@ These configuration files are designed to create a lightweight and customizable 
 - Dunst: Notification daemon with personalized themes for a minimal look.
 - Rofi: Application launcher and window switcher with a custom theme.
 - Zsh: Used along with Oh My Zsh. Shell configuration with useful aliases and plugins, optimized for performance and usability.
+  
+<br>
 
-# Setup
+![Preview](https://github.com/rogerrius/hyprland-dots/blob/main/screenshots/preview.png)
 
-Clone the repository:
+<br>
 
-    git clone https://github.com/rogerrius/hyprland-dots
+## Setup
 
-Copy the files in the folders to the respective directories:
+1. Make sure the following programs are installed:
 
-- Hyprland: ~/.config/hypr/
-- Waybar: ~/.config/waybar/
-- Dunst: ~/.config/dunst/
-- Rofi: ~/.config/rofi/
-- Zsh: ~/.zshrc
+| Program | URL |
+| --- | --- |
+| Hyprland | https://github.com/hyprwm/Hyprland |
+| Waybar | https://github.com/Alexays/Waybar/ |
+| Dunst | https://dunst-project.org/ |
+| Zsh | https://www.zsh.org/ |
+| Oh My Zsh | https://ohmyz.sh/ |
+| Rofi | https://aur.archlinux.org/packages/rofi-lbonn-wayland-git |
 
-Make sure the following programs are installed:
+2. Clone the repo:
 
-- [Hyprland](https://github.com/hyprwm/Hyprland)
+       git clone https://github.com/rogerrius/hyprland-dots
 
-- [Waybar](https://github.com/Alexays/Waybar/)
+3. Copy the files in the folders to the respective directories.
 
-- [Dunst](https://dunst-project.org/)
+<br>
 
-- [Zsh](https://www.zsh.org/)
-    - [Oh My Zsh](https://ohmyz.sh/)
+## Thanks
 
-- [Rofi](https://aur.archlinux.org/packages/rofi-lbonn-wayland-git)
-
-# Screenshots
+Thanks to everybody who uploaded their dotfiles in the last 12 months. If I ever find your repos again, I will credit you, as I have reused a lot of your code.

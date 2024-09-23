@@ -1,0 +1,196 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-left": 7,
+    "margin-right": 7,
+    "margin-bottom": -2,
+    "height": 48,
+    "spacing": 0,
+    "modules-left": ["custom/launcher","hyprland/workspaces","cpu","memory","disk"],
+    "modules-center": ["custom/song_name","custom/pre","custom/spotify","custom/next"],
+    "modules-right": ["tray","pulseaudio#audio","backlight","battery","clock","custom/powermenu"],
+
+"hyprland/workspaces": {
+    "disable-scroll": false,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+        "default": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "active": "󱓻",
+        "urgent": "󱓻"
+    },
+    "persistent-workspaces": {
+        "*": 4
+    }
+},
+
+"disk": {
+    "path": "/",
+    "interval": 10,
+    "format": " 󰋊 {percentage_used}% ",
+    "tooltip-format": "{used} plens de {total}",
+    "max-length": 10
+},
+
+"memory": {
+    "interval": 5,
+    "format": "   {used:0.1f} GB ",
+    "tooltip-format": "",
+    "max-length": 20
+},
+
+"cpu": {
+    "interval": 2,
+    "format": "   {usage}% ",
+    "max-length": 10
+},
+
+"tray": {
+    "icon-size": 26,
+    "spacing": 10
+},
+
+"clock": {
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format-alt": "   {:%a, %d %b %Y} ",
+    "format": "   {:%H:%M} ",
+    "calendar": {
+        "weeks-pos": "none",
+        "on-scroll": 1,
+        "format": {
+                "months":     "<span color='#8fbcbb'><b>{}</b></span>",
+                "days":       "<span color='#8a909e'>{}</span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#81a1c1'><b>{}</b></span>",
+                "today":      "<span color='#88c0d0'><b>{}</b></span>"
+                }
+        },
+    "actions":  {
+        "on-click-right": "none",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+        }
+},
+
+// "network": {
+//     "interval": 300,
+//     "format": "{ipaddr}",
+//     "format-disconnected": "󰤭 ",
+//     "tooltip-format": "{essid}",
+//     "align": 0,
+//     "max-length": 25
+// },
+
+"pulseaudio#audio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 {volume}%",
+    "format-icons": {
+        "headphone": "󰋋",
+        "hands-free": "󰋋",
+        "headset": "󰋋",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿","󰖀","󰕾"]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "tooltip": true,
+    "tooltip-format": "{icon} {desc}",
+    "on-click-right": "pavucontrol"
+},
+
+// "pulseaudio#microphone": {
+//     "format": "{format_source}",
+//     "format-source": "󰍬 {volume}%",
+//     "format-source-muted": "󰍭 ",
+//     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+//     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +10%",
+//     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -10%",
+//     "max-volume": 100,
+//     "tooltip": false
+// },
+
+"backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set +5%", 
+    "on-scroll-down": "brightnessctl set 5%-",
+    "on-click": "",
+    "tooltip": false,
+    "nospacing": 1
+},
+
+"battery": {
+    "bat": "BAT1",
+    "interval": 60,
+    "states": {
+        "warning": 25,
+        "critical": 10
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [" 󰂎", " 󰁻", " 󰁾", " 󰂀", " 󰁹"],
+    "format-charging": " 󰂄 {capacity}%",
+    "format-plugged": " 󰂄 {capacity}%",
+    "max-length": 25
+},
+
+"custom/launcher": {
+	"format": "  ",
+	"tooltip": false,
+	"on-click": "/home/roger/.config/rofi/launchers/type-7/launcher.sh &"
+},
+
+"custom/next": {
+    "exec": "python3 ~/.config/waybar/scripts/next.py --player spotify",
+	"format": "{}",
+	"tooltip": false,
+	"on-click": "playerctl next",
+    "return-type": "json"
+},
+
+"custom/pre": {
+    "exec": "python3 ~/.config/waybar/scripts/pre.py --player spotify",
+	"format": "{}",
+	"tooltip": false,
+	"on-click": "playerctl previous",
+    "return-type": "json"
+},
+
+"custom/powermenu": {
+	"format": "⏻ ",
+	"tooltip": false,
+	"on-click": "/home/roger/.config/rofi/powermenu/type-3/powermenu.sh"
+},
+
+"custom/ibus": {
+	"format": "{}",
+	"exec": "/home/tdm/.config/waybar/scripts/input.sh &",
+	"interval": 1,
+	"tooltip": false,
+	"tooltip-format": "{}",
+	"on-click": "/home/tdm/.config/waybar/scripts/ibus.sh &"
+},
+
+"custom/spotify": {
+    "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "format": "{}",
+    "return-type": "json",
+    "on-click": "playerctl play-pause"
+},
+
+"custom/song_name": {
+    "exec": "python3 ~/.config/waybar/scripts/spotify.py --player spotify",
+    "format": "{}",
+    "return-type": "json"
+}
+}
+

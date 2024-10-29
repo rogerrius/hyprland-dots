@@ -17,7 +17,7 @@ These configuration files are designed to create a lightweight and customizable 
   
 <br>
 
-![Preview](https://github.com/rogerrius/hyprland-dots/blob/main/screenshots/preview.png)
+![Preview](https://github.com/rogerrius/hyprland-dots/blob/v1/screenshots/preview.png)
 
 <br>
 

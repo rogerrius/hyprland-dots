@@ -1,0 +1,10 @@
+[hyprkool]
+enabled = false
+failed = false
+filename = 'hyprkool.so'
+
+[repository]
+hash = 'fbc9b4f49daccc32b8634b139f2e0bd1aaf0e58a'
+name = 'hyprkool'
+rev = ''
+url = 'https://github.com/thrombe/hyprkool'

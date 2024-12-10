@@ -135,7 +135,7 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     5;
+    columns:                     6;
     lines:                       1;
     cycle:                       true;
     dynamic:                     true;
@@ -143,7 +143,7 @@ listview {
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
-    fixed-columns:               true;
+    fixed-columns:               false;
     
     spacing:                     var(list-spacing);
     margin:                      0px;

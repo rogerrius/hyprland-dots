@@ -1,0 +1,10 @@
+[Hyprspace]
+enabled = true
+failed = false
+filename = 'Hyprspace.so'
+
+[repository]
+hash = '55da6e2363d8298b54f3aba2d8cac8057163e2b7'
+name = 'Hyprspace'
+rev = ''
+url = 'https://github.com/KZDKM/Hyprspace'

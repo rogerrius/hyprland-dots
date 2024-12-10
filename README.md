@@ -1,3 +1,6 @@
+> [!CAUTION]
+> You are reading the README.md of the v1 branch, whose branch is deprecated, to have the latest version of my dotfiles switch to the v2 branch.
+
 # rogerrius's Hyprland dotfiles
 
 This repository contains my custom configuration files for Hyprland, along with other useful programs. 
